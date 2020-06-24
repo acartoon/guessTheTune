@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 
 const WelcomeScreen = (props) => {
   const {errorCount, gameTime} = props;
@@ -17,5 +19,11 @@ const WelcomeScreen = (props) => {
     <p className="welcome__text">Удачи!</p>
   </section>;
 };
+
+WelcomeScreen.propTypes = {
+  errorCount: PropTypes.number.isRequired,
+  gameTime: PropTypes.number.isRequired
+};
+
 
 export default WelcomeScreen;
