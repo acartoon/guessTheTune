@@ -7,7 +7,7 @@ it(`App correctly renders after relaunch`, () => {
   .create(<WelcomeScreen
     errorCount={0}
     gameTime={0}
-    onClick={() => null}
+    onStartButtonClick={() => null}
   />)
   .toJSON();
   expect(tree).toMatchSnapshot();
