@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artist correctly renders after relaunch 1`] = `
+<div
+  className="artist"
+>
+  <input
+    className="artist__input visually-hidden"
+    id="answer-154"
+    name="answer"
+    onChange={[Function]}
+    type="radio"
+    value="answer-154"
+  />
+  <label
+    className="artist__name"
+    htmlFor="answer-154"
+  >
+    <img
+      alt="John Snow"
+      className="artist__picture"
+    />
+    John Snow
+  </label>
+</div>
+`;

@@ -10,7 +10,7 @@ it(`Симуляция нажатия на кнопку`, () => {
   const welcomeScreen = shallow(<WelcomeScreen
     errorCount={5}
     gameTime={3}
-    onClick={clickHandler}
+    onStartButtonClick={clickHandler}
   />);
 
   const startButton = welcomeScreen.find(`.welcome__button`);
