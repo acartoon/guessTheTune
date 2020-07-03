@@ -9,7 +9,11 @@ it(`GameGenre correctly renders after relaunch`, () => {
     screenIndex={5}
     question={testMocks[0]}
     onAnswer={() => null}
-  />)
+  />, {
+    createNodeMock: () => {
+      return {};
+    }
+  })
   .toJSON();
   expect(tree).toMatchSnapshot();
 });

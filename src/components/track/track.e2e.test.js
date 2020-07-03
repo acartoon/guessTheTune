@@ -15,8 +15,8 @@ it(`Симуляция изменения инпута`, () => {
     index={INDEX}
     answer={testMocks[0].answers[1]}
     onAnswer={changeHandler}
-    state={false}
-  />);
+    state={false}>
+  </Track>);
 
   const input = track.find(`input`);
   input.simulate(`change`, {

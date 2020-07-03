@@ -1,13 +1,15 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import Track from "../track/track.jsx";
+import Player from "../player/player.jsx";
 
 class GameGenre extends PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      answers: new Array(4).fill(false),
+      answers: new Array(4).fill(true),
+      activePlayer: -1,
     };
 
     this.handleAnswerSubmit = this.handleAnswerSubmit.bind(this);
@@ -46,7 +48,6 @@ class GameGenre extends PureComponent {
         <form
           onSubmit={(evt) => {
             evt.preventDefault();
-            // console.log({question: question.id, answers: this.state.answers})
             onAnswer({question: question.id, answers: this.state.answers});
 
             // вот это скорее всего хрень, надо смотреть и думать)
@@ -63,7 +64,14 @@ class GameGenre extends PureComponent {
               index={i}
               answer={answer}
               onAnswer={this.handleAnswerSubmit}
-              state={this.state.answers[i]}/>;
+              state={this.state.answers[i]}>
+              <Player
+                src={answer.src}
+                isPlaying={i === this.state.activePlayer}
+                onPlayButtonClick={() => this.setState({
+                  activePlayer: this.state.activePlayer === i ? -1 : i
+                })}/>
+            </Track>;
           })}
 
           <button className="game__submit button" type="submit">Ответить</button>

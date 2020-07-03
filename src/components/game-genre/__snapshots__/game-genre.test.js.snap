@@ -72,28 +72,32 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
       <div
         className="track"
       >
-        <button
-          className="track__button track__button--play"
-          type="button"
-        />
         <div
-          className="track__status"
+          className="track"
         >
-          <audio
-            src="https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg"
+          <button
+            className="track__button track__button--play"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
           />
+          <div
+            className="track__status"
+          >
+            <audio />
+          </div>
         </div>
         <div
           className="game__answer"
         >
           <input
-            checked={false}
+            checked={true}
             className="game__input visually-hidden"
             id="answer-9mT"
             name="answer"
             onChange={[Function]}
             type="checkbox"
-            value="answer-pop"
+            value="answer-pop true"
           />
           <label
             className="game__check"
@@ -106,28 +110,32 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
       <div
         className="track"
       >
-        <button
-          className="track__button track__button--play"
-          type="button"
-        />
         <div
-          className="track__status"
+          className="track"
         >
-          <audio
-            src="https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg"
+          <button
+            className="track__button track__button--play"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
           />
+          <div
+            className="track__status"
+          >
+            <audio />
+          </div>
         </div>
         <div
           className="game__answer"
         >
           <input
-            checked={false}
+            checked={true}
             className="game__input visually-hidden"
             id="answer-fRl"
             name="answer"
             onChange={[Function]}
             type="checkbox"
-            value="answer-pop"
+            value="answer-pop true"
           />
           <label
             className="game__check"
@@ -140,28 +148,32 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
       <div
         className="track"
       >
-        <button
-          className="track__button track__button--play"
-          type="button"
-        />
         <div
-          className="track__status"
+          className="track"
         >
-          <audio
-            src="https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg"
+          <button
+            className="track__button track__button--play"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
           />
+          <div
+            className="track__status"
+          >
+            <audio />
+          </div>
         </div>
         <div
           className="game__answer"
         >
           <input
-            checked={false}
+            checked={true}
             className="game__input visually-hidden"
             id="answer-LIz"
             name="answer"
             onChange={[Function]}
             type="checkbox"
-            value="answer-rock"
+            value="answer-rock true"
           />
           <label
             className="game__check"
@@ -174,28 +186,32 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
       <div
         className="track"
       >
-        <button
-          className="track__button track__button--play"
-          type="button"
-        />
         <div
-          className="track__status"
+          className="track"
         >
-          <audio
-            src="https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg"
+          <button
+            className="track__button track__button--play"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
           />
+          <div
+            className="track__status"
+          >
+            <audio />
+          </div>
         </div>
         <div
           className="game__answer"
         >
           <input
-            checked={false}
+            checked={true}
             className="game__input visually-hidden"
             id="answer-qJ3"
             name="answer"
             onChange={[Function]}
             type="checkbox"
-            value="answer-pop"
+            value="answer-pop true"
           />
           <label
             className="game__check"

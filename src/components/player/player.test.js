@@ -1,15 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import GameArtict from './game-artict.jsx';
 import {testMocks} from '../../mocks/test-mocks.js';
+import Player from './player.jsx';
 
-it(`GameArtict correctly renders after relaunch`, () => {
+it(`Player correctly renders after relaunch`, () => {
   const tree = renderer
-  .create(<GameArtict
-    screenIndex={5}
-    question={testMocks[2]}
-    onAnswer={() => null}
-  />, {
+  .create(<Player
+    src={testMocks[2].song.src}
+    isPlaying={false}
+    onPlayButtonClick={() => null}/>, {
     createNodeMock: () => {
       return {};
     }

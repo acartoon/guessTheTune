@@ -1,28 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+// import Player from "../player/player.jsx";
 
 const Track = (props) => {
-  const {index, onAnswer, answer, state} = props;
-  // const {screenIndex, question, onAnswer} = props;
-  // console.log(answer);
+  const {index, onAnswer, answer, state, children} = props;
 
-  const handleChangeAnswer = (evt) => {
-    evt.preventDefault();
-    // console.log(index)
+  const handleChangeAnswer = () => {
     onAnswer(index);
   };
 
   return <div className="track">
-    <button className="track__button track__button--play" type="button"></button>
-    <div className="track__status">
-      <audio src={`${answer.src}`}></audio>
-    </div>
+    {children}
     <div className="game__answer">
 
-      <input onChange = {handleChangeAnswer}
-        className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${answer.genre}`} id={`answer-${answer.id}`}
+      <input
         checked={state}
+        onChange = {handleChangeAnswer}
+        className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${answer.genre} ${state}`} id={`answer-${answer.id}`}
       />
       <label className="game__check" htmlFor= {`answer-${answer.id}`} >Отметить</label>
     </div>
@@ -34,6 +28,7 @@ Track.propTypes = {
   onAnswer: PropTypes.func.isRequired,
   answer: PropTypes.object.isRequired,
   state: PropTypes.bool.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 

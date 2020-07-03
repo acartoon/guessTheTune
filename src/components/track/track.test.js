@@ -9,8 +9,8 @@ it(`Track correctly renders after relaunch`, () => {
     index={1}
     answer={testMocks[0].answers[1]}
     onAnswer={() => null}
-    state={false}
-  />)
+    state={false}>
+  </Track>)
   .toJSON();
   expect(tree).toMatchSnapshot();
 });
