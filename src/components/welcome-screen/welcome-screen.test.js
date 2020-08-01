@@ -5,7 +5,7 @@ import WelcomeScreen from './welcome-screen';
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
   .create(<WelcomeScreen
-    errorCount={0}
+    maxMistakes={5}
     gameTime={0}
     onStartButtonClick={() => null}
   />)

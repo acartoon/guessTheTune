@@ -21,6 +21,8 @@ it(`Симуляция изменения инпута`, () => {
   });
 
   expect(changeHandler).toHaveBeenCalledTimes(1);
-  expect(changeHandler.mock.calls[0][0]).toMatch(testMocks[2].song.artist);
+
+  // тут какая-то лажа
+  expect(changeHandler.mock.calls[0][0].artist).toMatch(testMocks[2].song.artist);
 
 });

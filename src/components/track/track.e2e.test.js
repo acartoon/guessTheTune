@@ -26,4 +26,6 @@ it(`Симуляция изменения инпута`, () => {
   expect(changeHandler).toHaveBeenCalledTimes(1);
   expect(changeHandler.mock.calls[0][0]).toBe(INDEX);
 
+  const checkbox = track.find(`.game__input`);
+
 });

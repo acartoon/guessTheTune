@@ -44,7 +44,7 @@ exports[`App correctly renders after relaunch 1`] = `
     </li>
     <li>
       Можно допустить 
-      0
+      5
        ошибки.
     </li>
   </ul>

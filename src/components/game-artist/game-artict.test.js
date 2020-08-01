@@ -7,8 +7,11 @@ it(`GameArtict correctly renders after relaunch`, () => {
   const tree = renderer
   .create(<GameArtict
     screenIndex={5}
+    gameTime = {5}
+    mistakes = {1}
     question={testMocks[2]}
     onAnswer={() => null}
+    onStartСountdown={() => null}
   />, {
     createNodeMock: () => {
       return {};

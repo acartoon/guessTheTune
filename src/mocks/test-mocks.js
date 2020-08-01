@@ -1,7 +1,7 @@
 export const testMocks = [
   {
     answers: [
-      {id: `9mT`, src: `https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg`, genre: `pop`},
+      {id: `9mT`, src: `https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg`, genre: `jazz`},
       {id: `fRl`, src: `https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg`, genre: `pop`},
       {id: `LIz`, src: `https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg`, genre: `rock`},
       {id: `qJ3`, src: `https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg`, genre: `pop`},
@@ -24,7 +24,7 @@ export const testMocks = [
   {
     answers: [
       {id: `4G1`, picture: `https://api.adorable.io/avatars/134`, artist: `John Snow`},
-      {id: `eVm`, picture: `https://api.adorable.io/avatars/102`, artist: `John Snow`},
+      {id: `eVm`, picture: `https://api.adorable.io/avatars/102`, artist: `Jim Beam`},
       {id: `Gey`, picture: `https://api.adorable.io/avatars/120`, artist: `Jack Daniels`},
     ],
     id: `C9G`,
@@ -34,7 +34,7 @@ export const testMocks = [
   {
     answers: [
       {id: `4G1`, picture: `https://api.adorable.io/avatars/134`, artist: `John Snow`},
-      {id: `eVm`, picture: `https://api.adorable.io/avatars/102`, artist: `John Snow`},
+      {id: `eVm`, picture: `https://api.adorable.io/avatars/102`, artist: `John Lenon`},
       {id: `Gey`, picture: `https://api.adorable.io/avatars/120`, artist: `Jack Daniels`},
     ],
     id: `C9G`,

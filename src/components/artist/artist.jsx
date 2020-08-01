@@ -4,11 +4,13 @@ import PropTypes from "prop-types";
 
 const Artist = (props) => {
   const {onAnswer, question, i} = props;
+  // console.log(question)
 
   return <div className="artist">
     <input onChange={(evt) => {
       evt.preventDefault();
-      onAnswer(question.artist);
+      // console.log(question)
+      onAnswer(question);
     }}
 
     className="artist__input visually-hidden" type="radio" name="answer" value={`answer-${i}`} id={`answer-${i}`}/>
