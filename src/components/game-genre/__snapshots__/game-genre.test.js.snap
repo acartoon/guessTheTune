@@ -42,11 +42,28 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
       />
     </svg>
     <div
+      className="timer__value"
+      xmlns="http://www.w3.org/1999/xhtml"
+    >
+      <span
+        className="timer__mins"
+      >
+        0
+      </span>
+      <span
+        className="timer__dots"
+      >
+        :
+      </span>
+      <span
+        className="timer__secs"
+      >
+        5
+      </span>
+    </div>
+    <div
       className="game__mistakes"
     >
-      <div
-        className="wrong"
-      />
       <div
         className="wrong"
       />
@@ -91,13 +108,13 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
           className="game__answer"
         >
           <input
-            checked={true}
+            checked={false}
             className="game__input visually-hidden"
             id="answer-9mT"
             name="answer"
             onChange={[Function]}
             type="checkbox"
-            value="answer-pop true"
+            value="answer-jazz false"
           />
           <label
             className="game__check"
@@ -129,13 +146,13 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
           className="game__answer"
         >
           <input
-            checked={true}
+            checked={false}
             className="game__input visually-hidden"
             id="answer-fRl"
             name="answer"
             onChange={[Function]}
             type="checkbox"
-            value="answer-pop true"
+            value="answer-pop false"
           />
           <label
             className="game__check"
@@ -167,13 +184,13 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
           className="game__answer"
         >
           <input
-            checked={true}
+            checked={false}
             className="game__input visually-hidden"
             id="answer-LIz"
             name="answer"
             onChange={[Function]}
             type="checkbox"
-            value="answer-rock true"
+            value="answer-rock false"
           />
           <label
             className="game__check"
@@ -205,13 +222,13 @@ exports[`GameGenre correctly renders after relaunch 1`] = `
           className="game__answer"
         >
           <input
-            checked={true}
+            checked={false}
             className="game__input visually-hidden"
             id="answer-qJ3"
             name="answer"
             onChange={[Function]}
             type="checkbox"
-            value="answer-pop true"
+            value="answer-pop false"
           />
           <label
             className="game__check"

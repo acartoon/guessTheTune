@@ -7,8 +7,8 @@ it(`Track correctly renders after relaunch`, () => {
   const tree = renderer
   .create(<Track
     index={1}
-    answer={testMocks[0].answers[1]}
     onAnswer={() => null}
+    answer={testMocks[0].answers[1]}
     state={false}>
   </Track>)
   .toJSON();

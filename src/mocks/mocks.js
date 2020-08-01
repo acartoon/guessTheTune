@@ -53,6 +53,7 @@ const getAnswersArtict = () => {
   };
 };
 
+
 export const questions = new Array(QUESTION_COUNT).fill(``).map(() => {
   return getRandomInt(1) ? getQuestionsArtict() : getQuestionsGenre();
 });

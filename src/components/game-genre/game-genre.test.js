@@ -6,7 +6,10 @@ import {testMocks} from '../../mocks/test-mocks';
 it(`GameGenre correctly renders after relaunch`, () => {
   const tree = renderer
   .create(<GameGenre
-    screenIndex={5}
+    screenIndex={2}
+    gameTime={5}
+    onStartСountdown={() => null}
+    mistakes={2}
     question={testMocks[0]}
     onAnswer={() => null}
   />, {

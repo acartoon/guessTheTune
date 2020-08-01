@@ -42,14 +42,28 @@ exports[`GameArtict correctly renders after relaunch 1`] = `
       />
     </svg>
     <div
+      className="timer__value"
+      xmlns="http://www.w3.org/1999/xhtml"
+    >
+      <span
+        className="timer__mins"
+      >
+        0
+      </span>
+      <span
+        className="timer__dots"
+      >
+        :
+      </span>
+      <span
+        className="timer__secs"
+      >
+        5
+      </span>
+    </div>
+    <div
       className="game__mistakes"
     >
-      <div
-        className="wrong"
-      />
-      <div
-        className="wrong"
-      />
       <div
         className="wrong"
       />
@@ -124,11 +138,11 @@ exports[`GameArtict correctly renders after relaunch 1`] = `
           htmlFor="answer-1"
         >
           <img
-            alt="John Snow"
+            alt="Jim Beam"
             className="artist__picture"
             src="https://api.adorable.io/avatars/102"
           />
-          John Snow
+          Jim Beam
         </label>
       </div>
       <div

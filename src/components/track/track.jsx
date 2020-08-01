@@ -28,7 +28,7 @@ Track.propTypes = {
   onAnswer: PropTypes.func.isRequired,
   answer: PropTypes.object.isRequired,
   state: PropTypes.bool.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };
 
 

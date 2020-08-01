@@ -8,7 +8,7 @@ Enzyme.configure({adapter: new Adapter()});
 it(`Симуляция нажатия на кнопку`, () => {
   const clickHandler = jest.fn();
   const welcomeScreen = shallow(<WelcomeScreen
-    errorCount={5}
+    maxMistakes={5}
     gameTime={3}
     onStartButtonClick={clickHandler}
   />);
