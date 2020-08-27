@@ -12,8 +12,8 @@ const QUESTION_COUNT = 5;
 const GENRES = [`rock`, `pop`, `jazz`];
 
 const ARTISTS = [`John Snow`, `Jack Daniels`, `Jim Beam`];
-// const SRC = `https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg`;
-const SRC = `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`;
+const SRC = `https://upload.wikimedia.org/wikipedia/commons/4/48/Wickethewok_-_Deepecho.ogg`;
+// const SRC = `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`;
 const IMG_SRC = [`https://api.adorable.io/avatars/102`, `https://api.adorable.io/avatars/120`, `https://api.adorable.io/avatars/134`];
 
 const getQuestionsGenre = () => {

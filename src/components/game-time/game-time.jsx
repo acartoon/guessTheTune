@@ -34,7 +34,6 @@ export default class GameTime extends PureComponent {
   componentWillUnmount() {
     clearInterval(this.timerId);
   }
-
 }
 
 GameTime.propTypes = {

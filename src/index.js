@@ -6,6 +6,7 @@ import {createStore} from "redux";
 import {Provider} from "react-redux";
 import {reducer} from "./reducer/reducer.js";
 import {testMocks} from "./mocks/test-mocks.js";
+import withScreenSwitch from "./hocs/with-screen-switch/with-screen-switch.js";
 
 
 // store - хранилище
@@ -19,14 +20,15 @@ import {testMocks} from "./mocks/test-mocks.js";
 // mapStateToProps -> из state в props
 // & mapDispatchToProps -> из props в state
 
+const AppWrapped = withScreenSwitch(App);
+
 const init = () => {
   // при создании store я передаю функцию reducer
   const store = createStore(reducer);
 
   ReactDOM.render(<Provider store={store}>
-    <App
+    <AppWrapped
       maxMistakes={settings.errorCount}
-      maxTime={settings.gameTime}
       questions={testMocks}
     />
   </Provider>,

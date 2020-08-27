@@ -3,24 +3,21 @@ import PropTypes from "prop-types";
 // import Player from "../player/player.jsx";
 
 const Track = (props) => {
-  const {index, onAnswer, answer, state, children} = props;
-
+  const {index, onChange, answer, checked} = props;
+  console.log(checked)
   const handleChangeAnswer = () => {
-    onAnswer(index);
+    onChange(index);
   };
 
-  return <div className="track">
-    {children}
-    <div className="game__answer">
-
+  return <div className="game__answer">
       <input
-        checked={state}
+        type="checkbox"
+        defaultChecked={checked}
         onChange = {handleChangeAnswer}
-        className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${answer.genre} ${state}`} id={`answer-${answer.id}`}
+        className="game__input visually-hidden" name="answer" value={`answer-${answer.genre}`} id={`answer-${answer.id}`}
       />
       <label className="game__check" htmlFor= {`answer-${answer.id}`} >Отметить</label>
-    </div>
-  </div>;
+    </div>;
 };
 
 Track.propTypes = {
@@ -28,7 +25,6 @@ Track.propTypes = {
   onAnswer: PropTypes.func.isRequired,
   answer: PropTypes.object.isRequired,
   state: PropTypes.bool.isRequired,
-  children: PropTypes.element,
 };
 
 

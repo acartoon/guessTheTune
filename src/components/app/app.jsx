@@ -1,64 +1,78 @@
 import React, {PureComponent} from "react";
-import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 import PropTypes from "prop-types";
-import GameArtict from "../game-artist/game-artict.jsx";
-import GameGenre from "../game-genre/game-genre.jsx";
-import {connect} from "react-redux";
 import {ActionCreator} from "../../reducer/reducer.js";
+import Game from "../../components/game/game.jsx";
+import GameArtict from "../../components/game-artist/game-artict.jsx";
+import GameGenre from "../../components/game-genre/game-genre.jsx";
+import withActivePlayer from "../with-active-player/with-active-player";
+import withAnswers from "../with-answers/with-answers.js";
+import WelcomeScreen from "../../components/welcome-screen/welcome-screen.jsx";
+
+import {connect} from "react-redux";
+import {compose} from "recompose";
+
+const GameArtictWrapped = withActivePlayer(GameArtict);
+const GameGenreWrapped = withAnswers(withActivePlayer(GameGenre));
+
 
 class App extends PureComponent {
 
-  static getScreen(question, props) {
-    const {gameTime, maxTime, maxMistakes, step, mistakes, onUserAnswer, onWelcomeScreenClick, onStartTime} = props;
-    if (step === -1 || !question) {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return this._getScreen();
+  }
+
+  _getScreen() {
+    const {questions, gameTime, maxMistakes, step, mistakes, onUserAnswer, onWelcomeScreenClick, onStartTime} = this.props;
+    if (step === -1 || !questions) {
+      console.log(`sdfds`)
       return <WelcomeScreen
-        gameTime={maxTime}
+        gameTime={gameTime}
         maxMistakes={maxMistakes}
         onStartButtonClick={onWelcomeScreenClick}
       />;
     }
+    const currentQuestion = questions[step];
 
-    const currentQuestion = question;
+    const getGameGenre = () => {
+      return <GameGenreWrapped
+        screenIndex={step}
+        question={currentQuestion}
+        onAnswer={(userAnswer, questi) => (onUserAnswer(userAnswer, questi, mistakes, maxMistakes))}
+      />;
+    }
+
+    const getGameArtict = () => {
+      return <GameArtictWrapped
+        screenIndex={step}
+        question={currentQuestion}
+        onAnswer={(userAnswer, questionData) => (onUserAnswer(userAnswer, questionData, mistakes, maxMistakes))}
+      />;
+    }
 
     switch (currentQuestion.type) {
       case `genre`:
-        return <GameGenre
+        return <Game
+          onStartСountdown = {onStartTime}
           gameTime = {gameTime}
-          screenIndex={step}
-          question={currentQuestion}
-          // onAnswer={(userAnswer, questi) => (onUserAnswer(userAnswer, questi, mistakes, maxMistakes))}
-          onAnswer={(userAnswer, questionData) => {
-            return onUserAnswer(userAnswer, questionData, mistakes, maxMistakes);
-          }}
-          mistakes={mistakes}
-          onStartСountdown={onStartTime}
+          mistakes = {mistakes}
+          renderScreen = {getGameGenre}
         />;
 
       case `artist`:
-        return <GameArtict
-          gameTime={gameTime}
-          screenIndex={step}
-          question={currentQuestion}
-          onAnswer={(userAnswer, questionData) => (onUserAnswer(userAnswer, questionData, mistakes, maxMistakes))}
-          mistakes={mistakes}
-          onStartСountdown={onStartTime}
+        return <Game
+          onStartСountdown = {onStartTime}
+          gameTime = {gameTime}
+          mistakes = {mistakes}
+          renderScreen = {getGameArtict}
         />;
     }
 
     return null;
   }
-
-  constructor(props) {
-    super(props);
-
-  }
-
-  render() {
-    const {questions, step} = this.props;
-
-    return App.getScreen(questions[step], this.props);
-  }
-
 }
 
 App.propTypes = {
@@ -76,8 +90,8 @@ App.propTypes = {
 // из хранилища в props
 const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps,
     {step: state.step,
-      mistakes: state.mistakes,
-      gameTime: state.gameTime
+    mistakes: state.mistakes,
+    gameTime: state.gameTime,
     });
 
 // props => store

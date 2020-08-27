@@ -1,42 +1,24 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import Artist from "../artist/artist.jsx";
-import Player from "../player/player.jsx";
-import Header from "../header/header.jsx";
 
 export default class GameArtict extends PureComponent {
   constructor(props) {
     super(props);
-
-    this.state = {
-      activePlayer: false,
-    };
-
   }
 
   render() {
 
-    const {screenIndex, onAnswer, question, mistakes, gameTime, onStartСountdown} = this.props;
+    const {screenIndex, onAnswer, question, mistakes, gameTime, onStartСountdown, renderPlayer} = this.props;
 
     const handleAnswer = (answer) => {
       onAnswer(answer, question);
     };
 
-    return <section className="game game--artist">
-      <Header
-        mistakes = {mistakes}
-        gameTime = {gameTime}
-        onStartСountdown = {onStartСountdown}
-      />
-      <section className="game__screen">
+    return <section className="game__screen">
         <h2 className="game__title">Кто исполняет эту песню?</h2>
         <div className="game__track">
-          <Player
-            src={question.song.src}
-            isPlaying={this.state.activePlayer}
-            onPlayButtonClick={() => this.setState({
-              activePlayer: !this.state.activePlayer
-            })}/>
+          {renderPlayer(question.song, 0)}
         </div>
 
         <form className="game__artist">
@@ -50,8 +32,7 @@ export default class GameArtict extends PureComponent {
           })}
 
         </form>
-      </section>
-    </section>;
+      </section>;
   }
 }
 
